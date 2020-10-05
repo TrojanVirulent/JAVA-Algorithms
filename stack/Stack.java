@@ -11,7 +11,7 @@ public class stack
 	
 	public static void main(String args[])
 	{
-		int ch,ele;
+		int choice,element;
 		
 		while(true)
 		{
@@ -22,27 +22,27 @@ public class stack
 			System.out.println("5-Quit");
 			
 			System.out.println("Enter your choice");
-			ch = sc.nextInt();
+			choice = sc.nextInt();
 			
 			switch(ch)
 			{
-				case 1: System.out.println("enter element to be pushed");
-						ele = sc.nextInt();
-						push(ele);
+				case 1: System.out.println("enter   ment to be pushed");
+						element = sc.nextInt();
+						push(element);
 						break;
 						
-				case 2: ele = pop();
-						if (ele==0)
+				case 2: element = pop();
+						if (element==0)
 							System.out.println("Stack Underflow");
 						else 
-							System.out.println("Popped element:"+ele);
+							System.out.println("Popped element:"+element);
 						break;
 				
-				case 3: ele = peek();
-						if (ele==0)
+				case 3: element = peek();
+						if (element==0)
 							System.out.println("Stack Underflow");
 						else 
-							System.out.println("Peek element:"+ele);
+							System.out.println("Peek element:"+element);
 						break;
 				
 				case 4: traverse();
@@ -65,7 +65,7 @@ public class stack
 		System.out.println("Stack created with size"+ size);		
 	}
 	
-	static void push(int ele)
+	static void push(int element)
 	{
 		if (isFull())
 		{
@@ -74,7 +74,7 @@ public class stack
 		else
 		{
 			top++;
-			stack[top]= ele;
+			stack[top]= element;
 		}
 	}
 	static int pop()
@@ -83,10 +83,7 @@ public class stack
 		{
 			return 0;
 		}
-		else
-		{
-			return stack[top--];
-		}
+		return stack[top--];
 	}
 	
 	static int peek()
@@ -95,10 +92,7 @@ public class stack
 		{
 			return 0;
 		}
-		else
-		{
-			return stack[top];
-		}
+		return stack[top];
 	}
 	
 	static void traverse()
@@ -117,19 +111,14 @@ public class stack
 	static boolean isFull()
 	{
 		if (top == (size-1))
-		{
 			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return false;
 	}
+	
 	static boolean isEmpty()
 	{
 		if(top==-1)
 			return true;
-		else
-			return false;
+		return false;
 	}
 }
