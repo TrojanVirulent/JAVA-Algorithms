@@ -16,3 +16,4 @@
         - Heap Sort
         - Radix Sort
 
+Anyone who wants to contribute here. Please follow the [Style guide](https://udacity.github.io/git-styleguide/)
